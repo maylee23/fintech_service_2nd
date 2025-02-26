@@ -1,3 +1,4 @@
+# 2025-02-25 DAY1
 USE titanic;
 SHOW Tables;
 SELECT * FROM p_info;
