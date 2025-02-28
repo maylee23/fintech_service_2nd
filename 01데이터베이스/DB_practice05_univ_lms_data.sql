@@ -51,39 +51,41 @@ SELECT * FROM student_course;
 ############### 문제
 
 # 1
-SELECT student_id, student_name, height, student.department_id, department_name FROM student INNER JOIN department ON student.department_id = department.department_id;
+SELECT student_id, student_name, height, s.department_id, department_name FROM student s INNER JOIN department d ON s.department_id = d.department_id;
 
 # 2
 SELECT professor_id FROM professor WHERE professor_name = "가교수";
 
 # 3
-SELECT department.department_name, COUNT(department.department_name) FROM department LEFT JOIN professor ON department.department_id = professor.department_id GROUP BY department.department_name;
+SELECT d.department_name, COUNT(d.department_name) FROM department d LEFT JOIN professor ON d.department_id = professor.department_id GROUP BY d.department_name;
 
 # 4
-SELECT student_id, student_name, height, student.department_id, department_name FROM student LEFT JOIN department ON student.department_id = department.department_id WHERE department_name='정보통신공학';
+SELECT student_id, student_name, height, s.department_id, department_name FROM student s LEFT JOIN department d ON s.department_id = d.department_id WHERE department_name='정보통신공학';
 
 # 5
-SELECT professor_id, professor_name, department.department_id, department.department_name FROM professor LEFT JOIN department ON professor.department_id = department.department_id WHERE department_name = '정보통신공학';
+SELECT professor_id, professor_name, d.department_id, department_name FROM professor p LEFT JOIN department d ON p.department_id = d.department_id WHERE department_name = '정보통신공학';
 
 # 6
-SELECT student_name, department_name FROM student LEFT JOIN department ON student.department_id = department.department_id WHERE student_name LIKE "아%";
+SELECT student_name, department_name FROM student s LEFT JOIN department d ON s.department_id = d.department_id WHERE student_name LIKE "아%";
 
 # 7
 SELECT COUNT(student_id) FROM student WHERE height BETWEEN 180 AND 190;
 
 # 8
-SELECT department_name, MAX(height), ROUND(AVG(height)) FROM student LEFT JOIN department ON student.department_id = department.department_id GROUP BY department_name ORDER BY department_name;
+SELECT department_name, MAX(height), ROUND(AVG(height)) FROM student s LEFT JOIN department d ON s.department_id = d.department_id GROUP BY department_name ORDER BY department_name;
 
-# 9  #### 다시
-SELECT student_name FROM student LEFT JOIN department ON student.department_id = department.department_id
-	WHERE student.department_id = (SELECT department_id FROM student WHERE student_name = "다길동");
+# 9 !!
+SELECT student_name FROM student WHERE department_id = (SELECT department_id FROM student WHERE student_name = "다길동");
 
 # 10
-SELECT student_name, course_name FROM student LEFT JOIN student_course ON student.student_id = student_course.student_id LEFT JOIN course ON student_course.course_id = course.course_id WHERE start_date LIKE "2016/11%";
+SELECT student_name, course_name FROM student s LEFT JOIN student_course sc ON s.student_id = sc.student_id LEFT JOIN course c ON sc.course_id = c.course_id WHERE start_date LIKE "2016/11%";
 
 # 11
-SELECT student_name, course_name FROM student LEFT JOIN student_course ON student.student_id = student_course.student_id LEFT JOIN course ON student_course.course_id = course.course_id WHERE course_name="데이터베이스 입문";
+SELECT student_name, course_name FROM student s LEFT JOIN student_course sc ON s.student_id = sc.student_id LEFT JOIN course c ON sc.course_id = c.course_id WHERE course_name="데이터베이스 입문";
 
 # 12
-SELECT COUNT(student.student_id) FROM student LEFT JOIN student_course ON student.student_id = student_course.student_id LEFT JOIN course ON student_course.course_id = course.course_id LEFT JOIN professor ON course.professor_id = professor.professor_id WHERE professor_name="빌게이츠";
+SELECT COUNT(*) FROM student s LEFT JOIN student_course sc ON s.student_id = sc.student_id WHERE course_id = (SELECT course_id FROM professor p LEFT JOIN course c ON p.professor_id = c.professor_id WHERE professor_name="빌게이츠");
+
+
+SELECT COUNT(s.student_id) FROM student s LEFT JOIN student_course sc ON s.student_id = sc.student_id LEFT JOIN course c ON sc.course_id = c.course_id LEFT JOIN professor p ON c.professor_id = p.professor_id WHERE professor_name="빌게이츠";
 
