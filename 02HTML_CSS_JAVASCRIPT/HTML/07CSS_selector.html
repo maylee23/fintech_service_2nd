@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../CSS/01_CSS_selector.css">
+    <title>07css컬렉터</title>
+    <style>
+        h1 { color: red; }
+        p { color: blue; }
+    </style>
+</head>
+<body>
+    <h1>hello world!</h1>
+    <h1>hello world2!</h1>
+    <p>this is paragrah is styled with CSS</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <!--style 에는 우선순위가 있다!--> 
+    <!--1. 각 태그안에 있는 우선순위 2. 상위 style 태그 3. 외부 css 파일-->
+    <p style="color: black;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, qui.</p>
+    <p>>Lorem ipsum dolor sit amet.</p>
+
+    <h1 class="center">id, class selector</h1>
+
+    <div class="contatiner">
+        <p id="p1">paragraph  1</p>
+        <p id="p2">paragraph 2</p>
+        <p class="p1">paragraph 3</p>
+        <p class="p2">paragraph 4</p>
+        
+        <p class="strong">strong class</p>
+        <p class="center">center class</p>
+        <p class="graycolor">gray color class</p>
+        <p class="strong center">strong + center class</p>
+        <p class="strong center graycolor">strong + center + color</p>
+        <p class="p1 strong center browncolor">p1 + strong + center + brown</p>
+
+    </div>
+
+<hr>
+
+<!-- attribute selector-->
+
+<h1 class="center">attribute selector </h1>
+<div>
+    <a href="http://www.google.com">google.com</a><br>
+    <p></p><a href="http://www.naver.com" target="_blank">naver.com</a></p>
+    <a href="http://www.daum.net" target="_top">daum.net</a>
+</div>
+
+<h1 class="center">attribute selector ~=</h1>
+<div> <!--like "% first" -->
+    <h2 title="heading first">heading first</h2>
+    <h2 title="heading-first">heading-first</h2>
+    <h2 title="heading second">heading second</h2>
+    <h2 title="heading-second">heading-second</h2>
+</div>
+
+<h1 class="center">attribute selector |=</h1>
+<div> <!--like "heading-" -->
+    <h2 title="heading first">heading first</h2>
+    <h2 title="heading-first">heading-first</h2>
+    <h2 title="heading second">heading second</h2>
+    <h2 title="heading-second">heading-second</h2>
+</div>
+
+
+<h1 class="center">attribute selector ^=</h1>
+<div>
+    <a href="https://www.naver.com">naver.com</a>
+    <a href="http://www.naver.com">naver2.com</a>
+</div>
+
+<h1 class="center">attribute selector $=</h1>
+<div>
+    <a href="https://www.naver.com/aaa.pdf">naver.com/aaa.pdf</a>
+    <a href="http://www.naver.combbb.html">naver2.com/bbb.html</a>
+</div>
+
+<h1 class="center">attribute selector *-=-</h1>
+<div>
+    <p class="first">first</p> 
+    <p class="first_test">first_test</p> 
+    <p class="second">second</p> 
+    <p class="second_test">second_test</p> 
+    <p class="test">test</p> 
+
+</div>
+
+</body>
+</html>

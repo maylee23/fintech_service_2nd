@@ -1,0 +1,97 @@
+/* 태그 셀렉터: 태그 이름을 지정해서 같은 태그의 스타일을 바꿔 줌 */
+h1 { color: violet; }
+h2 { color: black; }
+h3 { color: antiquewhite;}
+p { color: blue; }
+
+
+/* ID selector, CLASS selector */
+/* 태그 안에 id를 지정하고 그 id를 찾는 셀렉터, 태그 셀렉터보다 우선 적용한다. */
+/* '# + id'
+* id는 html 파일 안에서 중복 될 수 없다. */
+
+/* 'list'라는 ID를 가진 태그는 black으로 바꾸기*/
+#list {
+     color: black; 
+    }
+#p1 { 
+    color: yellow; 
+}
+#p2 {
+    color: orange;
+}
+
+
+/* CLASS 셀렉터 */
+/* 태그안에 class를 지정하고 그 class를 찾는 셀렉터 */
+/* '. + class명' */
+
+/* class는 html파일 안에서 여러 번 중복이 가능, class를 여러개 같이 사용가능 */
+
+.p1 { 
+    font-size: 20px;
+}
+
+.p2 {
+    color: brown;
+    font-weight: bolder;
+    text-align: center
+}
+
+.center {
+    text-align: center;
+}
+
+.strong {
+    font-weight: bolder;
+}
+
+.graycolor {
+    color: gray;
+}
+
+.browncolor {
+    color: brown;
+}
+
+/* Attribute src, href selector */
+/* 태그 안의 속성을 찾음 */
+/* 태그명[속성="값"]: 지정된 속성을 가지면서 값이 같은 요소를 선택 */
+
+a[href] {
+    color: aquamarine;
+}
+
+a[target="_blank"] {
+    color: black;
+    font-size: 30px;
+}
+
+/* 태그명[속성~="값"] 앞에 공백을 가지면서 포함하는 요소 */
+
+h2[title~="first"] {
+    color: red;
+}
+
+/* 태그명[속성 |="값"] "값-" (value+dash)의 형태 */
+h2[title|="heading"] {
+    color: green;
+    font-size: 40px;
+}
+
+/* 태그명[속성^="값"]  시작하는 요소 */
+a[href^="http://"] {
+    text-align: right;
+    color: brown;
+}
+
+/* 태그명[속성$="값"] 끝나는 요소. ex) .html, .csv */
+a[href$=".html"] {
+    text-align:  center;
+    color: blue
+}
+
+/* 태그명[속성*="값"] 포함하는 요소 */
+p[class*="test"] {
+    color: red;
+}
