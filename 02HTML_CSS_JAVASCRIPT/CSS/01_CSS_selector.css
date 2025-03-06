@@ -54,6 +54,11 @@ p { color: blue; }
     color: brown;
 }
 
+/* 3개의 class가 모두다 적용된 class */
+.strong.center.graycolor {
+    font-size: 30px;
+}
+
 /* Attribute src, href selector */
 /* 태그 안의 속성을 찾음 */
 /* 태그명[속성="값"]: 지정된 속성을 가지면서 값이 같은 요소를 선택 */
