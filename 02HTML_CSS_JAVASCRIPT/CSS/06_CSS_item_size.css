@@ -123,11 +123,22 @@ div.padding div {
 
 .padding div:first-child {
     padding: 0px;
+    margin: 20px;
 }
 
 .padding div:last-child {
     padding: 30px;
 }
+
+.padding div:last-child {
+    padding: 30px;
+    margin: 30px;
+}
+
+/* Margin의 겹침 현상!
+근처에 있는 두 요소에 각기 다른 margin을 줬을 때,
+각 margin의 합만큼 떨어지는 것이 아니라 큰 margin만큼만 떨어지게 된다.
+ex) 20px + 30px = 50px (x) 30px (o) */
 
 /* 안쪽 여백 지정하기 padding2 크기유지 */
 div.padding2 {

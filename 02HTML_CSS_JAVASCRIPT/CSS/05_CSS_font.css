@@ -1,3 +1,8 @@
+@charset "UTF-8";
+/* 구글 폰트 사용하기 */
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
+
 /* 폰트 굵기 바꾸기 */
 /* font-weight */
 /* normal, bold */
@@ -15,7 +20,8 @@ p > span {
 /* font-size: px, em, rem */
 /* px: 1920*1080 */
 /* em: 부모 요소를 기준으로. ex) 부모 20px 자식 2em (=40px) */
-/* rem: 최상위(html) 요소를 기준으로  */
+/* rem: 최상위(html) 요소를 기준. 최근 모바일 이슈로 가장 많이 쓰인다.  */
+/* ex) rem html 16px 2rem 32px 0.5 */
 
 /* viewport */
 .font_size > article > h1 {
@@ -30,37 +36,51 @@ p > span {
     font-size: 15px
 }
 
-.font_type li {
+
+html {
+    font-size: 30px;
+}
+
+/* em: 부모 사이즈를 기준으로  */
+
+
+.font_size-em > article {
     font-size: 40px;
 }
 
-
 .font_size-em > article > h1 {
-    font-size: 2em;
+    font-size: 3em;
 }
 
 .font_size-em > article > p {
-    font-size: 2em;
+    font-size: 1em;
 }
 
 .font_size-em > article > a {
-    font-size: 2em;
+    font-size: 0.8;
 }
 
+/* rem: html의 기본 폰트 사이즈를 기준으로 크기 변경 */
 
-.font_size-rem > article > h1 {
-    font-size: 2rem;
-}
 
-.font_size-rem > article > p {
-    font-size: 0.5rem;
-}
-
-.font_size-rem > article > a {
+.font_size-rem h1 {
     font-size: 3rem;
 }
 
+.font_size-rem p {
+    font-size: 1rem;
+}
 
+.font_size-rem a {
+    font-size: 0.8rem;
+}
+
+
+/* 폰트 모양 바꾸기 */
+
+.font_type li {
+    font-size: 40px;
+}
 
 .font_type li:nth-of-type(1) {
     font-family: "돋움";
@@ -79,7 +99,6 @@ p > span {
 }
 
 /* 구글 폰트 사용하기 */
-/* @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap'); */
 
 /* div.google_font > p.monoton-regular {
     font-family: "Monoton", sans-serif;

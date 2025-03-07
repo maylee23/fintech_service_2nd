@@ -58,11 +58,13 @@ aside h2 {
 
 /* 11	클래스 review의 첫 번째 <p> 글자색을 보라색으로 설정하세요. */
 
+/* 첫번째 review의 p 자손들만 색이 바뀜*/
 .review:first-of-type p{
     color: purple;
 }
 
 /* 주의! 아래 경우와 다름 */
+/* review의 p 자손 중, 처음 review 다음에 오는 p의 모든 색이 바뀜 */
 /* .review p:first-of-type{
     color: purple;
 } */
@@ -111,10 +113,15 @@ section h2 {
     color: pink;
 }
 
+/* ############## 살펴보기 ############# */
 /* 19	클래스 service-list 세 번째 <li> 글자색을 빨간색으로 설정하세요. */
 
+/* 틀린 답 */
+/* .service-list:first-of-type li {
+    color: red;
+} */
 
-/* .service-list:nth-of-type(3) li {
+/* .service-list:nth-of-type(1) li {
     color: red;
 } */
 
@@ -195,6 +202,7 @@ section p { font-size: 16px }
 /* article p:first-child {
     color: red;
 } */
+
 article p:first-of-type {
     color: red;
 }
